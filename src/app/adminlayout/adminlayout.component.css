@@ -1,0 +1,22 @@
+.content {
+  padding-top: 80px;
+}
+.user-title {
+  font-size: 32;
+  color: white;
+  text-decoration: none !important;
+  font-style: normal !important;
+}
+.fa-sign-out {
+  color: white;
+  font-size: 26px;
+}
+.app-header {
+  background-color: #5883e8;
+}
+.app-header__logo {
+  background-color: #5883e8;
+  font-family: serif;
+  font-size: 18px;
+  font-weight: 800;
+}

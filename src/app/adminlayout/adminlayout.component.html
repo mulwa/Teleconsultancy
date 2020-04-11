@@ -1,0 +1,21 @@
+<html lang="en">
+  <body>
+    <!-- Navbar-->
+    <header class="app-header">
+      <a class="app-header__logo">
+        <p class="user-title">{{ authService.getCurrentUserName() }}</p>
+      </a>
+      <ul class="app-nav">
+        <li class="dropdown">
+          <a class="app-nav__item" aria-label="Open Profile Menu"
+            ><i class="fa fa-sign-out fa-lg" (click)="logout()"> </i
+          ></a>
+        </li>
+      </ul>
+    </header>
+
+    <div class="container-fluid content">
+      <router-outlet></router-outlet>
+    </div>
+  </body>
+</html>

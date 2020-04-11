@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="navigation">
+      <button [routerLink]="['/dash/assesment']">Assessment</button>
+      <button [routerLink]="['/dash/pay']">Make Payment</button>
+      <button [routerLink]="['/dash/payments']">Search Payment</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-7">
+    <div class="card">
+      <div class="card-body">
+        <iframe
+          src="https://nim.doxy.me/signin"
+          style="height:700px;width:100%"
+          allow="camera; microphone"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <router-outlet></router-outlet>
+  </div>
+</div>

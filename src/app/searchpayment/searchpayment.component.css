@@ -1,0 +1,10 @@
+.card {
+  margin-top: 10px;
+}
+.center {
+  text-align: center;
+}
+.scrollable {
+  max-height: 100vh;
+  overflow-y: scroll;
+}

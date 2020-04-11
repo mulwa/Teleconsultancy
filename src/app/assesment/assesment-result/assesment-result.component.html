@@ -1,0 +1,71 @@
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-body" *ngFor="let patient of prevAssessment">
+      <fieldset>
+        <legend>Contact Information Related to Covid-19</legend>
+        <div class="row">
+          <div class="col-md-4">
+            <strong>Name:</strong> {{ patient.full_name }}
+          </div>
+          <div class="col-md-3"><strong>Age:</strong> {{ patient.age }}</div>
+          <div class="col-md-5">
+            <strong>Phn:</strong>{{ patient.phone_number }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <strong>Location</strong> : {{ patient.location_name }}
+          </div>
+        </div>
+        <div class="row margin-row">
+          <div class="col-md-6">
+            <p>
+              <strong>Alt Contact</strong> :
+              {{ patient.alternative_contact_full_name }}
+            </p>
+          </div>
+          <div class="col-md-6">
+            <p>
+              <strong>Alt Contact #:</strong>
+              {{ patient.alternative_contact_phone_number }}
+            </p>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="repeat">
+        <hr />
+        <p class="date">{{ patient.assesment_date }}</p>
+        <hr />
+        <fieldset>
+          <legend>Exposure History</legend>
+          <div class="row">
+            <div class="col-md-12">
+              <ul
+                *ngFor="
+                  let exposure of convertToArray(patient.exposure_history)
+                "
+              >
+                <li>{{ exposure }}</li>
+              </ul>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Emergency Symptoms</legend>
+          <ul
+            *ngFor="let symptom of convertToArray(patient.emergency_symptoms)"
+          >
+            <li>{{ symptom }}</li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>Symptoms</legend>
+          <ul *ngFor="let symptom of convertToArray(patient.symptoms)">
+            <li>{{ symptom }}</li>
+          </ul>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>

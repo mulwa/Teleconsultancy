@@ -1,0 +1,59 @@
+<div class="card">
+  <div class="card-body">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input
+          type="text"
+          placeholder="Phone Number"
+          #phoneNumber
+          (keydown.enter)="searchPayment(phoneNumber)"
+          class="form-control"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <button (click)="searchPayment(phoneNumber)">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-loader *ngIf="showLoading"></app-loader>
+<div class="scrollable" *ngIf="payments && !showLoading">
+  <div class="card" *ngFor="let payment of payments">
+    <div class="card-body">
+      <div class="form-row">
+        <div class="col-md-12">
+          <p class="center">
+            <strong>Source Name:</strong> {{ payment.source_name }}
+          </p>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6">
+          <p>
+            <strong>Account No:</strong> {{ payment.source_account_number }}
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p><strong>Amount:</strong> {{ payment.transfer_amount }}</p>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-6">
+          <p><strong>Transaction id </strong>: {{ payment.transaction_id }}</p>
+        </div>
+        <div class="col-md-6">
+          <p><strong>Tranfer date</strong> : {{ payment.transfer_date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card" *ngIf="payments?.length == 0 && !showLoading">
+  <div class="card-body">
+    <p>
+      No Payment Found
+    </p>
+  </div>
+</div>
